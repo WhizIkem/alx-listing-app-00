@@ -1,5 +1,4 @@
 // constant images
 
-const heroBackground = "/assets/Hero-section/Image 1.png";
-
-export { heroBackground };
+export const heroDesktop = "assets/Hero-section/Image1.png";
+export const heroMobile = "assets/Hero-section/Image1mobile.png";

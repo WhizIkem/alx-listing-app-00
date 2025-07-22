@@ -4,7 +4,7 @@ import { PropertyProps } from "@/interfaces";
 
 const PropertyCard: React.FC<{ property: PropertyProps }> = ({ property }) => {
   return (
-    <div className="bg-white rounded-2xl shadow-md overflow-hidden transition hover:shadow-xl">
+    <div className="bg-white rounded-2xl shadow-md overflow-hidden transition hover:shadow-xl relative">
       <img
         src={property.image}
         alt={property.name}
@@ -21,6 +21,11 @@ const PropertyCard: React.FC<{ property: PropertyProps }> = ({ property }) => {
           <p className="text-xl font-bold">${property.price}</p>
           <p className="text-sm text-yellow-500">⭐ {property.rating}</p>
         </div>
+        {property.discount !== "" && (
+          <span className="absolute top-2 right-2 bg-blue-600 text-sm text-white font-semibold px-2 py-2 rounded z-10">
+            {property.discount}
+          </span>
+        )}
       </div>
     </div>
   );

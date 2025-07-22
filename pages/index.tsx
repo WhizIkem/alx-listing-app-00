@@ -1,6 +1,6 @@
 // pages/index.tsx
 import React, { useState } from "react";
-import { heroBackground } from "@/constants/images";
+import { heroDesktop, heroMobile } from "@/constants/images";
 import Pill from "@/components/Pill"; // Make sure the path is correct
 import { PROPERTYLISTINGSAMPLE } from "@/constants";
 import PropertyCard from "@/components/common/PropertyCard";
@@ -13,18 +13,13 @@ const Home: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section
-        className="h-[80vh] bg-cover bg-center flex items-center justify-center text-white text-center px-4"
-        style={{ backgroundImage: `url(${heroBackground})` }}
-      >
-        <div className="bg-black bg-opacity-50 p-8 rounded-lg">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Find your favorite place here!
-          </h1>
-          <p className="text-lg md:text-xl">
-            The best prices for over 2 million properties worldwide.
-          </p>
-        </div>
+      <section className="relative h-[80vh] text-white text-center px-4">
+        <div className="absolute inset-0 bg-cover bg-center sm:hidden"
+          style={{ backgroundImage: `url(${heroMobile})` }}
+        />
+        <div className="absolute inset-0 bg-cover bg-center hidden sm:block"
+          style={{ backgroundImage: `url(${heroDesktop})` }}
+        />
       </section>
 
       {/* Filter Section */}
